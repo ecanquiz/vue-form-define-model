@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { reactive, toRaw } from "vue"
 import type Task from "@/types/Tasks"
 
 const props = defineProps<{
@@ -14,10 +14,19 @@ const situationOptions = [
   { label: 'Started', value: 1 },
   { label: 'Completed', value: 2 }
 ]
+
+const emit = defineEmits<{
+  (e: 'sendForm', task: Task): void
+}>()
+
+const sendForm = () => {
+  // here inside will be the code of this method
+  emit('sendForm', toRaw(form))
+}
 </script>
 
 <template>
-  <form>
+  <form @submit.prevent="sendForm">
     <label>Select a frequency</label>
     <AppSelect
       :options="frequencies"
