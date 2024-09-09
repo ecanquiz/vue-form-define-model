@@ -1,4 +1,5 @@
 import { reactive } from 'vue'
+import { postTask } from '@/services/TaskService'
 
 export default () => {   
   const task = reactive({
@@ -24,5 +25,19 @@ export default () => {
     'weekly'
   ]
 
-  return { frequencies, task }
+  const sendForm = (payload: any) => {
+    // here inside will be sendForm method code
+    postTask(payload).then((response) => {
+      console.log('Response', response)
+    }).catch((err) => {
+      console.log('Error', err)
+    })
+  }
+
+  return {
+    frequencies,
+    task,
+  
+    sendForm
+  }
 }

@@ -2,7 +2,12 @@
 import useTasks from '@/composables/useTasks'
 import TasksForm from '@/components/TasksForm.vue'
 
-const { frequencies, task } = useTasks()
+const {
+  frequencies,
+  task,
+  
+  sendForm
+} = useTasks()
 </script>
 
 <template>
@@ -10,7 +15,8 @@ const { frequencies, task } = useTasks()
     <h1>Create an task</h1>
     <TasksForm
       :task='task'
-      :frequencies='frequencies'      
+      :frequencies='frequencies'
+      @sendForm="sendForm"     
     />
     <pre>{{ task }}</pre>
   </div>
