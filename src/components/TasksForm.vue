@@ -34,41 +34,48 @@ const sendForm = () => {
       label="Select a frequency"
     />
 
-    <h3>Name & describe your task</h3>
-    <AppInput
-      v-model="form.name"
-      label="Name"
-      type="text"
-    />
-
-    <AppTextarea
-      v-model="form.description"
-      label="Description"      
-    />
-
-    <h3>Task situation</h3>
-    <div>
-      <AppRadioGroup
-        v-model="form.situation"
-        name="situation"
-        :options="situationOptions"
+    <fieldset>        
+      <legend>Name & describe your task</legend>
+      <AppInput
+        v-model="form.name"
+        label="Name"
+        type="text"
       />
-    </div>
-
-    <h3>Supervision</h3>
-    <div>
-      <AppCheckbox
-        v-model="form.supervision.reviewed"
-        label="Reviewed"
+      
+      <AppTextarea
+        v-model="form.description"
+        label="Description"      
       />
-    </div>
+    </fieldset>
 
-    <div>
-      <AppCheckbox
-        v-model="form.supervision.approved"
-        label="Approved"
-      />
-    </div>
+    <fieldset>
+      <legend>Task situation</legend>
+      <div>
+        <AppRadioGroup
+          v-model="form.situation"
+          name="situation"
+          :options="situationOptions"
+        />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Supervision</legend>
+   
+      <div>
+        <AppCheckbox
+          v-model="form.supervision.reviewed"
+          label="Reviewed"
+        />
+      </div>
+
+      <div>
+        <AppCheckbox
+          v-model="form.supervision.approved"
+          label="Approved"
+        />
+      </div>
+    </fieldset>
 
     <button
       class="btn btn-primary"
@@ -78,3 +85,13 @@ const sendForm = () => {
     </button>
   </form>    
 </template>
+
+<style scoped>
+fieldset { 
+  @apply border-0 m-0 p-0;
+}
+
+legend {
+  @apply text-2xl font-semibold my-4;
+}
+</style>
