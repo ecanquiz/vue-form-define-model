@@ -9,8 +9,8 @@ import AppCheckbox from '@/components/App/Checkbox.vue'
 import AppRadio from '@/components/App/Radio.vue'
 import AppRadioGroup from '@/components/App/RadioGroup.vue'
 import AppTextarea from '@/components/App/Textarea.vue'
-
-
+import AppErrorMessage from '@/components/App/ErrorMessage.vue'
+import AppButton from '@/components/App/Button.vue'
 
 createApp(App)
   .component('AppInput', AppInput)
@@ -19,5 +19,8 @@ createApp(App)
   .component('AppRadio', AppRadio)
   .component('AppRadioGroup', AppRadioGroup)
   .component('AppTextarea', AppTextarea)
+  .component('AppErrorMessage', AppErrorMessage)
+  .component('AppButton', AppButton)
+
   .mount('#app')
   

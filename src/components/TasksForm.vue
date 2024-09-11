@@ -40,6 +40,7 @@ const sendForm = () => {
         v-model="form.name"
         label="Name"
         type="text"
+        error="This input has an error!"
       />
       
       <AppTextarea
@@ -77,12 +78,12 @@ const sendForm = () => {
       </div>
     </fieldset>
 
-    <button
+    <AppButton
       class="btn btn-primary"
-      type="submit"
+        type="submit"
     >
       Submit
-    </button>
+    </AppButton>    
   </form>    
 </template>
 
