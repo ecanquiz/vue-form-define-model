@@ -4,7 +4,7 @@ import type Task from "@/types/Tasks"
 
 const props = defineProps<{
   task: Task,
-  frequencies: string[]
+  frequencies: {id: string | number, name: string}[]
 }>()
 
 const form = reactive(props.task)
@@ -26,8 +26,7 @@ const sendForm = () => {
 </script>
 
 <template>
-  <form @submit.prevent="sendForm">
-    <label>Select a frequency</label>
+  <form @submit.prevent="sendForm">    
     <AppSelect
       :options="frequencies"
       v-model="form.frequency"

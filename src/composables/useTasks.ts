@@ -15,14 +15,14 @@ export default () => {
 
   // this could be set from an http request service
   const frequencies = [
-    'annual',
-    'biannual',
-    'biweekly',
-    'daily',
-    'eventual',
-    'monthly',
-    'quarterly',
-    'weekly'
+    {id:1, name: 'annual'},
+    {id:2, name: 'biannual'},
+    {id:3, name: 'biweekly'},
+    {id:4, name: 'daily'},
+    {id:5, name: 'eventual'},
+    {id:6, name: 'monthly'},
+    {id:7, name: 'quarterly'},
+    {id:8, name: 'weekly'}
   ]
 
   const sendForm = (payload: any) => {
