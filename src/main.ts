@@ -2,6 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 
 import {
   Input,
@@ -11,7 +12,8 @@ import {
   RadioGroup,
   Textarea,
   ErrorMessage,
-  Btn
+  Btn,
+  Link
 } from '@ecanquiz/vue-forms'
 
 /*import AppInput from '@/components/App/Input.vue'
@@ -24,6 +26,7 @@ import AppErrorMessage from '@/components/App/ErrorMessage.vue'
 import AppButton from '@/components/App/Button.vue'*/
 
 createApp(App)
+  .use(router)
   .component('AppInput', Input)
   .component('AppSelect', Select)
   .component('AppCheckbox', Checkbox)
@@ -32,6 +35,6 @@ createApp(App)
   .component('AppTextarea', Textarea)
   .component('AppErrorMessage', ErrorMessage)
   .component('AppButton', Btn)
-
+  .component('AppLink', Link)
   .mount('#app')
   
