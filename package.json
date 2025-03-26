@@ -12,7 +12,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "@ecanquiz/vue-forms": "file:../vue-forms",
+    "@ecanquiz/vue-forms": "file:../vue-core-components",
     "axios": "^1.7.7",
     "vue": "^3.4.29",
     "vue-router": "^4.4.5"

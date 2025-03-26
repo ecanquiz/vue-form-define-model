@@ -4,18 +4,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import {
-  Input,
-  Select,
-  Checkbox,
-  Radio,
-  RadioGroup,
-  Textarea,
-  ErrorMessage,
-  Btn,
-  Link
-} from '@ecanquiz/vue-forms'
-
 /*import AppInput from '@/components/App/Input.vue'
 import AppSelect from '@/components/App/Select.vue'
 import AppCheckbox from '@/components/App/Checkbox.vue'
@@ -25,7 +13,19 @@ import AppTextarea from '@/components/App/Textarea.vue'
 import AppErrorMessage from '@/components/App/ErrorMessage.vue'
 import AppButton from '@/components/App/Button.vue'*/
 
-createApp(App)
+/*import {
+  Input,
+  Select,
+  Checkbox,
+  Radio,
+  RadioGroup,
+  Textarea,
+  ErrorMessage,
+  Btn,
+  Link
+} from '@ecanquiz/vue-forms'*/
+
+/*createApp(App)
   .use(router)
   .component('AppInput', Input)
   .component('AppSelect', Select)
@@ -36,5 +36,18 @@ createApp(App)
   .component('AppErrorMessage', ErrorMessage)
   .component('AppButton', Btn)
   .component('AppLink', Link)
-  .mount('#app')
+  .mount('#app')*/
+
+import components from '@ecanquiz/vue-forms'
+import type { Component } from 'vue'
+
+const app = createApp(App);
+
+app.use(router)
+
+Object.keys(components).forEach((component: string) => {
+  app.component(`App${component}`, components[component as keyof Component] );
+});
+
+app.mount('#app')
   
